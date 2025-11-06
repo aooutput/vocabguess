@@ -55,7 +55,7 @@ if st.session_state.get("game_active", False):
     # Input for guesses
     guess = st.text_input("Enter your guess:", key="guess_input")
     if guess:
-        guess = guess.lower()
+        guess = guess.lower().strip()
         if guess.lower() in vocab:
                     
             if st.button("Submit Guess"):
@@ -97,4 +97,5 @@ if st.session_state.get("game_active", False):
 else:
 
     st.write("Set up a new game in the settings above!")
+
 
