@@ -12,7 +12,7 @@ if 'guesses' not in st.session_state:
 if 'game_active' not in st.session_state:
     st.session_state.game_active = False
 
-st.title("Alphabetical Word Guessing 🤔🔤")
+st.subheader("Alphabetical Word Guessing 🤔🔤")
 
 # Load word list from local file
 @st.cache_data
@@ -97,3 +97,4 @@ if st.session_state.get("game_active", False):
 else:
 
     st.write("Set up a new game in the settings above!")
+
