@@ -33,7 +33,7 @@ if not st.session_state.get("game_active", False):
     with st.expander("Game Settings"):
         new_word = st.text_input("Enter a valid word (2-12 letters), ex. scout:", key="word_input")
         new_max_guesses = st.number_input("Maximum number of guesses:", min_value=1, max_value=99, value=15)
-        
+        new_word=new_word.strip()
         if st.button("Start New Game"):
             if 2 <= len(new_word) <= 12 and new_word.isalpha() and new_word.lower() in vocab:
                 st.session_state.target_word = new_word.lower()
@@ -97,5 +97,6 @@ if st.session_state.get("game_active", False):
 else:
 
     st.write("Set up a new game in the settings above!")
+
 
 
